@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\dbsal\onedrive\바탕 화면\ec6\ec6\main.cpp(19): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dbsal\onedrive\바탕 화면\ec6\ec6\main.cpp(35): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\dbsal\onedrive\바탕 화면\ec6\ec6\main.cpp(50): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  EC6.vcxproj -> C:\Users\dbsal\OneDrive\바탕 화면\EC6\Debug\EC6.exe
