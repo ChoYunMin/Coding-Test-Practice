@@ -24,15 +24,22 @@ int main() {
 	}
 
 	for (int i = 1; i < vectorArr.size(); i++) {
-		if (vectorArr[i] >= first) { // 가장 큰 수 발견하면 제일 큰 수->두번째 큰 수 변경 후 제일 큰 수 갱신
+		if (vectorArr[i] > first) { // 가장 큰 수 발견하면 제일 큰 수->두번째 큰 수 변경 후 제일 큰 수 갱신
 			second = first;
 			first = vectorArr[i];
 		}
-		else if (vectorArr[i] < first && vectorArr[i] >= second) {
-			second = vectorArr[i];
+		else if (vectorArr[i] < first) {
+			if (first == second || vectorArr[i] > second) {
+				second = vectorArr[i];
+			}
 		}
 	}
-	cout << "Output: " << second << endl;
+	
+	if (first == second) { // 가장 큰 수와 두 번째 큰 수가 같으면 없다고 출력
+		cout << "Output: Does not exist." << endl;
+	}
+	else
+		cout << "Output: " << second << endl;
 
 	system("pause");
 	return 0;
