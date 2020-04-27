@@ -10,7 +10,6 @@ int main() {
 	cin >> inputString;
 
 	int first = 0;
-	int last = 0;
 	int maximum = 1;
 	map<char, int> subString;
 	for (int i = 0; i < inputString.size(); i++) {
