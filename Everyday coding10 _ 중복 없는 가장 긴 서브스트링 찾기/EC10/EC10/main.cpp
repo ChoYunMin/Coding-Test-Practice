@@ -15,7 +15,7 @@ int main() {
 	map<char, int> subString;
 	for (int i = 0; i < inputString.size(); i++) {
 		if (subString.find(inputString[i]) == subString.end()) { 
-			// vector에 겹치는 문자가 없을 경우
+			// map에 겹치는 문자가 없을 경우
 			subString[inputString[i]] = i;
 		}
 		else {
