@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <map>
 using namespace std;
 
 int main() {
@@ -11,22 +12,24 @@ int main() {
 	int first = 0;
 	int last = 0;
 	int maximum = 1;
-	for (int i = 1; i < inputString.size(); i++) {
-		int j;
-		for (j = first; j <= last; j++) {
-			if (inputString[j] == inputString[i]) {
-				// 중복된 Char 발견
-				maximum = max(last - first + 1, maximum); // 현재까지 가장 긴 서브스트링 저장
-				first = j+1; // 겹치는 char 바로 다음부터 다시 서브스트링 카운트
-				last = i; // last는 현재까지
-				break;
-			}
+	map<char, int> subString;
+	for (int i = 0; i < inputString.size(); i++) {
+		if (subString.find(inputString[i]) == subString.end()) { 
+			// vector에 겹치는 문자가 없을 경우
+			subString[inputString[i]] = i;
 		}
-		
-		if(j > last) // 겹치는 부분이 없을 경우 for문을 끝까지 돌기 때문에 마지막은 last+1
-			last++;
+		else {
+			// 겹치는 문자가 있을 경우
+			if (subString[inputString[i]] >= first) { // 현재 substring 안에 포함되는 문자인지
+				maximum = max(i - first, maximum); // 가장 긴 substring 길이 갱신
+				first = subString[inputString[i]] + 1;
+			}
+
+			subString[inputString[i]] = i; // 가장 최근 인덱스로 변경
+		}
 	}
-	maximum = max(last - first + 1, maximum);
+
+	maximum = max((int)inputString.size() - first, maximum); // 가장 긴 substring 길이 갱신
 
 	cout << "Output: " << maximum << endl;
 
