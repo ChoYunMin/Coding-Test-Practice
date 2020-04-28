@@ -9,6 +9,4 @@ Everyday Coding12
 > input: [1, 2, 3, 4, 5]  
   output: [120, 60, 40, 30, 24]
 
-풀이 참조: https://cornswrold.tistory.com/62
-
 ###### *문제 출처 - 2019매일프로그래밍*
